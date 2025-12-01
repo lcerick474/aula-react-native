@@ -2,7 +2,7 @@ import { TextInput, TextInputProps, View } from 'react-native';
 
 export function InputCustomizado({ ...rest }: TextInputProps) {
   return (
-    <View className="rounded-2x1 border-black-500 w-full border-2">
+    <View className="border-gray-500 border-2 rounded-2xl w-full">
       <TextInput {...rest} />
     </View>
   );
