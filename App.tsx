@@ -7,6 +7,7 @@ import { ListaScreens } from '@/screens/lista';
 import { TelaSoma } from '@/screens/TelaSoma';
 import { TelaContador } from '@/screens/TelaContador';
 import { TelaParImpar } from '@/screens/TelaParImpar';
+import { TelaMedia } from '@/screens/TelaMedia';
 
 
 export default function App() {

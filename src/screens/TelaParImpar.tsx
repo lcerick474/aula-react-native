@@ -1,6 +1,6 @@
 import { BotaoCustomizado } from "@/components/botaoCustomizado";
 import { InputCustomizado } from "@/components/inputCustomizado";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
 
 export function TelaParImpar() {
@@ -8,14 +8,13 @@ export function TelaParImpar() {
   const [valor, setValor] = useState("");
   const [resultado, setResultado] = useState("");
 
+  useEffect(() => {
+    setResultado("");
+  }, [valor]);
+
   function verificarParImpar() {
     const numero = Number(valor);
-
-    if (isNaN(numero)) {
-      setResultado("Digite um número válido");
-      return;
-    }
-
+    
     if (numero % 2 === 0) {
       setResultado("O número é Par");
     } else {
