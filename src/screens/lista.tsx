@@ -1,7 +1,7 @@
 import { BotaoCustomizado } from '@/components/botaoCustomizado';
 import { InputCustomizado } from '@/components/inputCustomizado';
 import { useState } from 'react';
-import { Text, View } from 'react-native';
+import { ScrollView, Text, View } from 'react-native';
 
 export function ListaScreens() {
   const [item, setItem] = useState('');
@@ -20,9 +20,13 @@ export function ListaScreens() {
       <InputCustomizado placeholder="item" value={item} onChangeText={setItem} />
       <BotaoCustomizado onPress={adicionarItem} title="Adicionar" />
       <BotaoCustomizado onPress={limparLista} title="Limpar" />
-      {lista.map((item, index) => (
-        <Text key={index}>{item}</Text>
-      ))}
+      <ScrollView className="mt-5 w-full gap-5 rounded-lg border border-gray-300 p-3">
+        {lista.map((item, index) => (
+          <Text key={index} className="text-2xl">
+            {item}
+          </Text>
+        ))}
+      </ScrollView>
     </View>
   );
 }
