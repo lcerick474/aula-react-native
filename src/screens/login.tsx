@@ -1,5 +1,6 @@
 import { BotaoCustomizado } from '@/components/botaoCustomizado';
 import { InputCustomizado } from '@/components/inputCustomizado';
+import { ProfileScreenNavigationProp } from '@/interface/rootPages';
 import { useNavigation } from '@react-navigation/native';
 import { use, useState } from 'react';
 import { Text, View } from 'react-native';
@@ -8,7 +9,7 @@ export function LoginScreen() {
   const [login, setLogin] = useState('');
   const [senha, setSenha] = useState('');
 
-  const navigation = useNavigation();
+  const navigation = useNavigation<ProfileScreenNavigationProp>();
 
   function logar() {
     console.log('Login:', login, 'Senha:', senha);
