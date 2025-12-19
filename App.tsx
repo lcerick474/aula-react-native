@@ -7,6 +7,7 @@ import { ListaScreens } from '@/screens/lista';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 import { Soma } from '@/screens/soma';
+import { ListasImparPar } from '@/screens/ListasImparPar';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -14,10 +15,11 @@ export default function App() {
     <>
       <SafeAreaView className="flex-1">
         <NavigationContainer>
-          <Stack.Navigator>
+          <Stack.Navigator initialRouteName="ListasImparPar" screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="ListasImparPar" component={ListasImparPar} />
+            <Stack.Screen name="listas" component={ListaScreens} />
             <Stack.Screen name="login" component={LoginScreen} />
             <Stack.Screen name="soma" component={Soma} />
-            <Stack.Screen name="listas" component={ListaScreens} />
           </Stack.Navigator>
         </NavigationContainer>
       </SafeAreaView>
